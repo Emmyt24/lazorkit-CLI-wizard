@@ -1,4 +1,4 @@
-# create-lazorkit-app
+# Lazorkit CLI wizard
 
 A powerful CLI tool for scaffolding Lazorkit-integrated applications. Generate high-quality example repositories demonstrating real-world usage of Lazorkit's key features like passkey authentication and gasless smart wallet transactions. Perfect for developers getting started with Lazorkit SDK.
 
