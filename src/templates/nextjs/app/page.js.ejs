@@ -1,8 +1,13 @@
-import LoginForm from './LoginForm';
-import TransferForm from './TransferForm';
-import PayWidget from './PayWidget';
-import TokenSwap from './TokenSwap';
-import SubscriptionService from './SubscriptionService';
+<% if (features.includes('passkey') || features.includes('auth')) { %>import LoginForm from './LoginForm';
+<% } %>
+<% if (features.includes('gasless')) { %>import TransferForm from './TransferForm';
+<% } %>
+<% if (features.includes('pay-widget')) { %>import PayWidget from './PayWidget';
+<% } %>
+<% if (features.includes('token-swap')) { %>import TokenSwap from './TokenSwap';
+<% } %>
+<% if (features.includes('subscription')) { %>import SubscriptionService from './SubscriptionService';
+<% } %>
 
 export default function Home() {
   return (
@@ -27,3 +32,4 @@ export default function Home() {
     </main>
   );
 }
+
