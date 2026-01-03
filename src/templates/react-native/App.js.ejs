@@ -1,0 +1,21 @@
+import { initLazorkit } from './sdk/lazorkit.js'
+
+initLazorkit()
+
+import React from 'react';
+import { View, Text } from 'react-native';
+import BiometricLogin from './BiometricLogin';
+
+function App() {
+  return (
+    <View>
+      <Text>Welcome to <%= appName %></Text>
+      <Text>Integrated with Lazorkit SDK</Text>
+<% if (features.includes('biometric')) { %>
+      <BiometricLogin />
+<% } %>
+    </View>
+  );
+}
+
+export default App;

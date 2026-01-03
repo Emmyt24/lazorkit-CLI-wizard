@@ -1,0 +1,29 @@
+import LoginForm from './LoginForm';
+import TransferForm from './TransferForm';
+import PayWidget from './PayWidget';
+import TokenSwap from './TokenSwap';
+import SubscriptionService from './SubscriptionService';
+
+export default function Home() {
+  return (
+    <main>
+      <h1>Welcome to <%= appName %></h1>
+      <p>Integrated with Lazorkit SDK</p>
+<% if (features.includes('passkey')) { %>
+      <LoginForm />
+<% } %>
+<% if (features.includes('gasless')) { %>
+      <TransferForm />
+<% } %>
+<% if (features.includes('pay-widget')) { %>
+      <PayWidget amount="0.1" merchant="example-merchant" />
+<% } %>
+<% if (features.includes('token-swap')) { %>
+      <TokenSwap />
+<% } %>
+<% if (features.includes('subscription')) { %>
+      <SubscriptionService />
+<% } %>
+    </main>
+  );
+}

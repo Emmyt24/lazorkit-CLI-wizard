@@ -1,0 +1,11 @@
+import { initLazorkit } from "../../sdk/lazorkit.js";
+
+initLazorkit();
+
+document.querySelector("#app").innerHTML = `
+  <h1>Welcome to <%= appName %></h1>
+  <p>Integrated with Lazorkit SDK</p><% if (features.auth) { %>
+  <p>Authentication feature enabled</p><% } %><% if (features.database) { %>
+  <p>Database feature enabled</p><% } %><% if (features.api) { %>
+  <p>API feature enabled</p><% } %>
+`;
