@@ -2,7 +2,7 @@
 
 ## 🚀 Welcome to the Future of Blockchain App Creation
 
-The Lazorkit CLI Wizard is not just another scaffolding tool—it's your gateway to building cutting-edge Web3 applications with unprecedented ease. Designed for developers who want to focus on innovation rather than boilerplate, this CLI transforms complex blockchain integrations into simple, guided experiences.
+The Lazorkit CLI Wizard is not just another scaffolding tool, it's your gateway to building cutting-edge Web3 applications with unprecedented ease. Designed for developers who want to focus on innovation rather than boilerplate, this CLI transforms complex blockchain integrations into simple, guided experiences.
 
 ## 📈 Success Metrics
 
