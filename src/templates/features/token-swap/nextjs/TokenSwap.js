@@ -1,3 +1,5 @@
+"use client";
+
 import { Lazorkit } from "lazor-kit";
 import { useState } from "react";
 

@@ -1,3 +1,5 @@
+"use client";
+
 import { Lazorkit } from "lazor-kit";
 
 export default function TransferForm() {
