@@ -35,7 +35,13 @@ async function generateApp(config, targetPath) {
       if (config.framework === "nextjs") {
         destPath = path.join(targetPath, "app");
       }
-      await fs.copy(featurePath, destPath);
+      // Copy contents of feature framework directory to destPath
+      const items = await fs.readdir(featurePath);
+      for (const item of items) {
+        const srcItemPath = path.join(featurePath, item);
+        const destItemPath = path.join(destPath, item);
+        await fs.copy(srcItemPath, destItemPath);
+      }
     }
   }
 

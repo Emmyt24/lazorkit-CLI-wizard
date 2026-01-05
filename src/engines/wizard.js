@@ -1,4 +1,4 @@
-const inquirer = require("inquirer").default;
+const inquirer = require("inquirer");
 
 async function runWizard(options = {}) {
   const prompts = [];
