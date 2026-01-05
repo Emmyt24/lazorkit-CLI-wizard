@@ -1,6 +1,9 @@
-const fs = require("fs-extra");
-const path = require("path");
-const ejs = require("ejs");
+import fs from "fs-extra";
+import path from "path";
+import ejs from "ejs";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 async function generateApp(config, targetPath) {
   // Ensure target directory exists
@@ -79,4 +82,4 @@ async function renderTemplates(dir, config) {
   }
 }
 
-module.exports = { generateApp };
+export { generateApp };

@@ -1,6 +1,6 @@
-const fs = require("fs-extra");
-const path = require("path");
-const { execSync } = require("child_process");
+import fs from "fs-extra";
+import path from "path";
+import { execSync } from "child_process";
 
 async function setupApp(config, targetPath) {
   console.log("Starting setup process...");
@@ -91,4 +91,4 @@ async function runFrameworkSetup(framework, targetPath) {
   }
 }
 
-module.exports = { setupApp };
+export { setupApp };

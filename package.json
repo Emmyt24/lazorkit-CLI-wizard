@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/lazorkit/create-lazorkit-app/issues"
   },
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "chalk": "^5.6.2",
     "commander": "^14.0.2",

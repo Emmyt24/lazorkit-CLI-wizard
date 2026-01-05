@@ -1,11 +1,9 @@
-const inquirer = require("inquirer");
+import { input, select, checkbox } from "@inquirer/prompts";
 
 async function runWizard(options = {}) {
-  const prompts = [];
-  if (!options.appName) {
-    prompts.push({
-      type: "input",
-      name: "appName",
+  let appName = options.appName;
+  if (!appName) {
+    appName = await input({
       message: "What is the name of your app?",
       validate: (input) => {
         if (!input || input.trim().length === 0) {
@@ -18,10 +16,10 @@ async function runWizard(options = {}) {
       },
     });
   }
-  if (!options.framework) {
-    prompts.push({
-      type: "list",
-      name: "framework",
+
+  let framework = options.framework;
+  if (!framework) {
+    framework = await select({
       message: "Choose a framework:",
       choices: [
         { name: "Next.js", value: "nextjs" },
@@ -30,10 +28,10 @@ async function runWizard(options = {}) {
       ],
     });
   }
-  if (!options.features) {
-    prompts.push({
-      type: "checkbox",
-      name: "features",
+
+  let features = options.features;
+  if (!features) {
+    features = await checkbox({
       message: "Select features:",
       choices: [
         { name: "Passkey login flow with smart wallet", value: "passkey" },
@@ -51,12 +49,12 @@ async function runWizard(options = {}) {
       ],
     });
   }
-  const answers = await inquirer.prompt(prompts);
+
   return {
-    appName: options.appName || answers.appName,
-    framework: options.framework || answers.framework,
-    features: options.features || answers.features,
+    appName,
+    framework,
+    features,
   };
 }
 
-module.exports = { runWizard };
+export { runWizard };

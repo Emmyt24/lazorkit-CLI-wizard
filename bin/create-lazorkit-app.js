@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-const { Command } = require("commander");
-const chalk = require("chalk").default;
-const path = require("path");
-const fs = require("fs-extra");
-const { runWizard } = require("../src/engines/wizard");
-const { generateApp } = require("../src/engines/generator");
-const { setupApp } = require("../src/engines/setup");
+import { Command } from "commander";
+import chalk from "chalk";
+import path from "path";
+import fs from "fs-extra";
+import { runWizard } from "../src/engines/wizard.js";
+import { generateApp } from "../src/engines/generator.js";
+import { setupApp } from "../src/engines/setup.js";
 
 const program = new Command();
 
