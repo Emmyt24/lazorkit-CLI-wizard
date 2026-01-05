@@ -1,6 +1,6 @@
 {
   "name": "create-lazorkit-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI tool for scaffolding Lazorkit applications with integrated SDK support",
   "bin": {
     "create-lazorkit-app": "bin/create-lazorkit-app.js"
