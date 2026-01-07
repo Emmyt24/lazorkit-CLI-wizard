@@ -1,7 +1,4 @@
-"use client";
-
-// import { Lazorkit } from "lazor-kit";
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function LoginForm() {
   const [isLoading, setIsLoading] = useState(false);
@@ -28,17 +25,13 @@ export default function LoginForm() {
 
   return (
     <div className="feature-container">
-      <div className="feature-icon">🔐</div>
-      <h2>Passkey Login</h2>
-      <p className="feature-description">
-        Secure authentication using passkeys and smart wallets
-      </p>
+      <h2>Passkey Login with Smart Wallet</h2>
       <button onClick={handlePasskeyLogin} disabled={isLoading}>
-        {isLoading ? "Authenticating..." : "Login with Passkey"}
+        {isLoading ? 'Logging in...' : 'Login with Passkey'}
       </button>
-      <p className="feature-description">
-        Lazorkit's passkey-based authentication enables seamless wallet creation
-        and transaction signing without seed phrases.
+      <p>
+        This demonstrates Lazorkit's passkey-based authentication and smart
+        wallet creation.
       </p>
     </div>
   );

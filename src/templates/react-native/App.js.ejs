@@ -3,18 +3,70 @@ import { initLazorkit } from './sdk/lazorkit.js'
 initLazorkit()
 
 import React from 'react';
-import { View, Text } from 'react-native';
-import BiometricLogin from './BiometricLogin';
+import { View, Text, ScrollView, StyleSheet } from 'react-native';
+<% if (features.includes('biometric')) { %>import BiometricLogin from './features/BiometricLogin';<% } %>
+<% if (features.includes('passkey')) { %>import PasskeyLogin from './features/PasskeyLogin';<% } %>
+<% if (features.includes('gasless')) { %>import GaslessTransfer from './features/GaslessTransfer';<% } %>
+<% if (features.includes('token-swap')) { %>import TokenSwap from './features/TokenSwap';<% } %>
+<% if (features.includes('subscription')) { %>import SubscriptionService from './features/SubscriptionService';<% } %>
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    paddingHorizontal: 16,
+    paddingVertical: 20,
+  },
+  header: {
+    marginBottom: 20,
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
+  subtitle: {
+    fontSize: 14,
+    color: '#666',
+  },
+  featureContainer: {
+    marginBottom: 24,
+  },
+});
 
 function App() {
   return (
-    <View>
-      <Text>Welcome to <%= appName %></Text>
-      <Text>Integrated with Lazorkit SDK</Text>
+    <ScrollView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>Welcome to <%= appName %></Text>
+        <Text style={styles.subtitle}>Integrated with Lazorkit SDK</Text>
+      </View>
 <% if (features.includes('biometric')) { %>
-      <BiometricLogin />
+      <View style={styles.featureContainer}>
+        <BiometricLogin />
+      </View>
 <% } %>
-    </View>
+<% if (features.includes('passkey')) { %>
+      <View style={styles.featureContainer}>
+        <PasskeyLogin />
+      </View>
+<% } %>
+<% if (features.includes('gasless')) { %>
+      <View style={styles.featureContainer}>
+        <GaslessTransfer />
+      </View>
+<% } %>
+<% if (features.includes('token-swap')) { %>
+      <View style={styles.featureContainer}>
+        <TokenSwap />
+      </View>
+<% } %>
+<% if (features.includes('subscription')) { %>
+      <View style={styles.featureContainer}>
+        <SubscriptionService />
+      </View>
+<% } %>
+    </ScrollView>
   );
 }
 

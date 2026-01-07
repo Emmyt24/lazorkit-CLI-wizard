@@ -1,23 +1,20 @@
-"use client";
-
-// import { Lazorkit } from "lazor-kit";
-import { useState } from "react";
+import { useState } from 'react';
+// import { Lazorkit } from 'lazor-kit';
 
 export default function TransferForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [txHash, setTxHash] = useState(null);
+
   const handleGaslessTransfer = async () => {
     setIsLoading(true);
     try {
-      // Assuming wallet is already created (e.g., from passkey)
       // const wallet = await Lazorkit.getWallet();
 
-      // Gasless USDC transfer on Solana
       // const tx = await wallet.transfer({
       //   to: "recipient-address",
-      //   amount: "1", // 1 USDC
+      //   amount: "1",
       //   token: "USDC",
-      //   gasless: true, // Enable gasless transaction
+      //   gasless: true,
       //   network: "solana-mainnet",
       // });
 
@@ -32,16 +29,12 @@ export default function TransferForm() {
 
   return (
     <div className="feature-container">
-      <div className="feature-icon">🚀</div>
-      <h2>Gasless Transfer</h2>
-      <p className="feature-description">
-        Send USDC without paying gas fees on Solana
-      </p>
+      <h2>Gasless USDC Transfer</h2>
       <button onClick={handleGaslessTransfer} disabled={isLoading}>
-        {isLoading ? "Processing..." : "Send 1 USDC (Gasless)"}
+        {isLoading ? 'Processing...' : 'Send 1 USDC (Gasless)'}
       </button>
       {txHash && <p className="success">Transaction: {txHash}</p>}
-      <p className="feature-description">
+      <p>
         This demonstrates Lazorkit's gasless transaction feature on Solana
         Mainnet.
       </p>

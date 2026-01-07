@@ -8,28 +8,51 @@
 <% } %>
 <% if (features.includes('subscription')) { %>import SubscriptionService from './SubscriptionService';
 <% } %>
+import './page.css';
 
 export default function Home() {
   return (
-    <main>
-      <h1>Welcome to <%= appName %></h1>
-      <p>Integrated with Lazorkit SDK</p>
+    <div className="main-container">
+      <div className="header-section">
+        <div className="header-content">
+          <h1 className="main-title">Lazorkit CLI Wizard</h1>
+          <p className="subtitle">Powered by Lazorkit SDK</p>
+          <div className="header-accent"></div>
+        </div>
+      </div>
+
+      <main className="features-grid">
 <% if (features.includes('passkey')) { %>
-      <LoginForm />
+        <div className="feature-card">
+          <LoginForm />
+        </div>
 <% } %>
 <% if (features.includes('gasless')) { %>
-      <TransferForm />
+        <div className="feature-card">
+          <TransferForm />
+        </div>
 <% } %>
 <% if (features.includes('pay-widget')) { %>
-      <PayWidget amount="0.1" merchant="example-merchant" />
+        <div className="feature-card">
+          <PayWidget amount="0.1" merchant="example-merchant" />
+        </div>
 <% } %>
 <% if (features.includes('token-swap')) { %>
-      <TokenSwap />
+        <div className="feature-card">
+          <TokenSwap />
+        </div>
 <% } %>
 <% if (features.includes('subscription')) { %>
-      <SubscriptionService />
+        <div className="feature-card">
+          <SubscriptionService />
+        </div>
 <% } %>
-    </main>
+      </main>
+
+      <footer className="footer-section">
+        <p>Built with Lazorkit SDK | Solana Mainnet Integration</p>
+      </footer>
+    </div>
   );
 }
 

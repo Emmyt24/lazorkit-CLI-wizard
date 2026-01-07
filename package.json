@@ -21,7 +21,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lazorkit/create-lazorkit-app.git"
+    "url": "git+https://github.com/lazorkit/create-lazorkit-app.git"
   },
   "homepage": "https://lazorkit.com",
   "bugs": {
